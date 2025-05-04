@@ -123,10 +123,19 @@ root@vmi2084482:~#
 
 Puede usar el comando `exit` para salir de la terminal del VPS.
 
-## Conectandonos a Nuestro servidor usando SSH y Remote explorer en VScode
+## Conectandonos remoto a nuestro servidor usando Remote explorer SSH en VScode
 
-Para poder usar remote explorer en vs code, es ncesario instalar la extension [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack). Para esto presione `Ctrl+p` y escriba `ext install ms-vscode-remote.vscode-remote-extensionpack`.
+En lo siguiente, se indica paso a paso como usar remote explorer en VsCode y conectar con nuestro servidor. Para lograr esto, es necesario [configurar ssh en nuestro SO y compartir llaves con nuestro VPS](#configuración-con-claves-ssh-método-recomendado)
 
-![alt text](../images/sshVScode.png)
+- Instalar la extension [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack). Para esto presione `Ctrl+p` y escriba `ext install ms-vscode-remote.vscode-remote-extensionpack`.
 
-Una vez instalada dicha extension, podras acceder al menu de remote explorer para agregar tu conexion SSH.
+  ![alt text](../images/sshVScode.png)
+
+- Una vez instalada dicha extension, podras acceder al menu de remote explorer y agregar tu conexion SSH.
+
+  ![alt text](../images/sshRemoteExplorerVsCode.png)
+
+- Escribe la informacion pedida por VsCode para establecer conexion SSH, algo como `ssh user@xx.xxx.xxx.xxx`
+.
+  ![alt text](image.png)
+- Una vez hayas completado los pasos anteriores, tu direccion servidor conectado por SSH te aparecera en tu lista de conexiones.
