@@ -1,6 +1,6 @@
 # Implementaciones de Servidores Virtuales Privados (VPS)
 
-Este repositorio documenta sistemáticamente experiencias técnicas y mejores prácticas para el despliegue de infraestructuras en entornos VPS, así como en servicios cloud y ambientes locales de prueba.
+Este repositorio documenta sistemáticamente experiencias técnicas y mejores prácticas para el despliegue de infraestructuras en entornos VPS, así como en ambientes locales de prueba.
 
 ## Protocolo Secure Shell (SSH)
 
