@@ -81,3 +81,31 @@ La ruta `/srv/` es una excelente elección para tus proyectos en un VPS por vari
 - Simplifica la documentación y mantenimiento
 
 Esta estructura no solo sigue los estándares de la industria, sino que también facilita el mantenimiento profesional de tu VPS , permitiéndote centrarte en el desarrollo de tus proyectos en lugar de preocuparte por la organización de archivos.
+
+# Levantando proyectos
+
+## Crear y correr imagen de Docker
+
+Aqui lo que yo hago es crear el docker compose directamente en el VPS, y usando [`docker-compose up`](./Docker.md#docker-compose) levantarlo para probarlo. Para levantarlo y dejarlo corriendo permanentemente usar:
+
+```shell
+TODO: Codido bash que tengo en el VPS
+```
+
+## Automatizacion en Github
+
+Usando githun actions automatizamos el proyecto de tal forma que se genere una nueva imagen de docker y se llame a ejecutar el docker compose que tenemos dentro de nuestro VPS. El docker compose tambien se puede copiar desde nuestro proyecto y pegarlo en una direccion de nuestro VPS usando bash y un [`docker-compose`](./Docker.md#docker-compose) en nuestro repositorio. A continuacion se muestra como podemos configurar github actions para levantar una imagen de docker en nuestro servidor.
+
+### Usando contrasena
+
+```
+codigo que tengo en guthub actions
+```
+
+### Usando Keys
+
+```
+TODO: Investigar
+```
+
+Los archivos de riesgo, se recomienda copiarlos o crearlos directamente, de forma manual, en el VPS, se podria automatizar con github actions pero para ello tendrias que subir archvos de riesgo que quieres automatizar como es `.env`. Si tu repositorio es privado y tienes absoluta seguridad de sus restricciones de seguridad, podrias automatizar este proceso de subir archivos de riesgo, pero esto es opcional segun tus necesidades.ss

@@ -39,6 +39,10 @@ Un Dockerfile es como una receta paso a paso que le dice a Docker cómo construi
 - `RUN`: Ejecuta comandos durante la construcción de la imagen
 - `CMD`: Define el comando predeterminado cuando se ejecuta el contenedor
 
+### Casos de uso
+
+En nuestro caso usaremos dockerFile para crear nuestra imagen de docker, imagen que guardaremos en dockerhub y luego cargaremos desde aqui usando un docker compose en nuestro VPS, de esta forma levantaremos la imagen creada en nuestro VPS. Este proceso se automatiza siguiendo [estos pasos](./VPS.md#automatizacion-en-github).
+
 ## Docker Compose
 
 TODO: Explicar todo esto en talla
@@ -53,5 +57,3 @@ Luego levantar el contenedor con el bash:
 ```shell
 docker compose up
 ```
-
-## Github

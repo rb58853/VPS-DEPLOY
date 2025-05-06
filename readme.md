@@ -17,7 +17,7 @@ Los componentes fundamentales del protocolo SSH incluyen:
 - **Sistema de Claves de Autenticación:** Mecanismo de seguridad basado en pares de claves pública/privada para verificar identidades
 - **Protocolo de Cifrado:** Conjunto de algoritmos avanzados que aseguran la privacidad y autenticidad de los datos transmitidos
 
-[Ver casos de uso y pasos para algunas conexiones SSH con nuestro VPS]((/Doc/SSH.md))
+[Ver casos de uso y pasos para algunas conexiones SSH con nuestro VPS](/Doc/SSH.md)
 
 ## Contenerización con Docker y Despliegue en VPS
 
