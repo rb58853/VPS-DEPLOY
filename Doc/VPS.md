@@ -41,7 +41,7 @@ Como buenas practicas, es recomendado usar la ruta `/srv/...` para guardar tus p
 ### Ejemplo de estructura organizada
 
 ```
-/srv/www/
+/srv/https/
     ├──your-domain.com/
     |   ├── your-api-one/
     |   │   ├── my_folder/

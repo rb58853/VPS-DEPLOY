@@ -41,4 +41,17 @@ Un Dockerfile es como una receta paso a paso que le dice a Docker cómo construi
 
 ## Docker Compose
 
+TODO: Explicar todo esto en talla
+Es necesario instalar docker compose para poder usar los `.ylm`.
+
+```shell
+sudo apt-get install docker-compose-plugin -y
+```
+
+Luego levantar el contenedor con el bash:
+
+```shell
+docker compose up
+```
+
 ## Github

@@ -107,11 +107,15 @@ Este método genera un par de claves: una privada (que mantienes segura en tu co
 ### Coloca tus keys en el directorio `~/.ssh/` y dale los permisos necesarios
 
 ```shell
+#Copiar las keys en el directorio .ssh
 cp my-ssh-key.key ~/.ssh/
 cp my-ssh-key.key.pub ~/.ssh/
-chmod 600 ~/.ssh/my-ssh-key.key
-chmod 644 ~/.ssh/my-ssh-key.key.pub
+
+#Dar permisos de lectura a la llave privada
+chmod 400 ~/.ssh/my-ssh-key.key
 ```
+<!-- chmod 600 ~/.ssh/my-ssh-key.key -->
+<!-- chmod 644 ~/.ssh/my-ssh-key.key.pub -->
 
 ### Verifica que los archivos estén correctamente ubicados y sean legibles
 
@@ -124,6 +128,10 @@ ls -la ~/.ssh/
 ```shell
 ssh -i ~/.ssh/ssh-key.key usuario@direccion-vps
 ```
+
+### Bibliografia
+
+Para la conexion a traves de llaves generadas desde el VPS se uso como bibliografia [Oracle connect to linux-instance](https://docs.oracle.com/en-us/iaas/Content/Compute/tutorials/first-linux-instance/overview.htm)
 
 ## Resultado
 
