@@ -23,7 +23,7 @@ Los componentes fundamentales del protocolo SSH incluyen:
 
 `Docker` representa una plataforma especializada en contenerización que permite encapsular aplicaciones completas junto con sus dependencias y configuraciones específicas. Esta arquitectura proporciona un entorno consistente y portable, optimizando la eficiencia de recursos y simplificando los procesos de desarrollo y despliegue.
 
-[Ver casos de uso de docker sobre la base de montar imagenes en servidores.]((/Doc/Docker.md))
+[Ver casos de uso de docker sobre la base de montar imagenes en servidores.](./Doc/Docker.md)
 
 # VPS (Servidor Privado Virtual)
 

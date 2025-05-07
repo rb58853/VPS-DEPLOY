@@ -11,6 +11,10 @@ Docker es una herramienta que permite empaquetar y ejecutar aplicaciones en cont
 
 Esta opción será considerada como una alternativa idónea para el almacenamiento de proyectos. Docker no mantiene una relación directa con servicios en la nube ni servidores, sino que constituye una metodología especializada para organizar tanto los entornos como las aplicaciones, con el propósito posterior de implementarlas en los servidores correspondientes.
 
+## Instalacion
+
+Instala `docker-engine` siguiendo los pasos de la [pagina oficial](https://docs.docker.com/engine/install/ubuntu/).
+
 ## Conceptos y Herramientas Importantes
 
 Es fundamental conocer cada uno de los elementos fundamentales que se utilizarán en este procedimiento.
@@ -56,4 +60,26 @@ Luego levantar el contenedor con el bash:
 
 ```shell
 docker compose up
+```
+
+## DockerHub
+
+### Permisos de conexion
+
+`docker compose -f docker-compose-dev.yml pull
+unable to get image 'rb58853/detal-images-analisis-api:dev-latest': permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.49/images/rb58853/detal-images-analisis-api:dev-latest/json": dial unix /var/run/docker.sock: connect: permission denied`
+
+Este error ocurre porque tu usuario no tiene los permisos necesarios para acceder al socket del demonio de Docker (/var/run/docker.sock). Este archivo es un socket Unix que permite la comunicación entre el cliente Docker y el servicio Docker Daemon.
+
+### Solucion: Agregar usuario al grupo docker (Recomendado)
+
+```shell
+# Crear el grupo docker si no existe
+sudo groupadd docker
+
+# Agregar tu usuario al grupo docker
+sudo usermod -aG docker $USER
+
+# Reiniciar sesión o ejecutar:
+su -s ${USER}
 ```
