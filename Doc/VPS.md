@@ -276,3 +276,50 @@ Para copiar nuestro archivo `.yml` hacia nuestro vps es necesario agregar otros 
 - Si usas esta opcion de copiar archivo. Es obligatorio que el archivo se ecuentre en tu repositorio, de lo contrario, fallara el workflow de github actions. En este caso el archivo se llama `docker-compose-dev.yml`. El nombre `docker-compose.yml` no debes usarlo, esta reservado para hacer build y push hacia dockerhub.
 
 - Los archivos de riesgo, se recomienda copiarlos o crearlos directamente, de forma manual, en el VPS, se podria automatizar con github actions pero para ello tendrias que subir archvos de riesgo que quieres automatizar como es `.env`. Si tu repositorio es privado y tienes absoluta seguridad de sus restricciones de seguridad, podrias automatizar este proceso de subir archivos de riesgo, pero esto es opcional segun tus necesidades.
+
+# Nginx
+
+## Instalar NGINX y Certbot
+
+```shell
+sudo apt update
+sudo apt install nginx certbot python3-certbot-nginx -y
+```
+
+## Configurar NGINX como proxy inverso
+
+### 1. Abre el siguiente archivo con Nano
+
+``` shell
+  sudo nano /etc/nginx/sites-available/n8n
+  ```
+
+### 2. Pega lo siguiente
+
+``` txt
+server {
+ listen 80;
+ server_name your_dns_server;
+ location / {
+ proxy_pass http://localhost:5678;
+ proxy_set_header Host $host;
+ proxy_set_header X-Real-IP $remote_addr;
+ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+ proxy_set_header X-Forwarded-Proto $scheme;
+ }
+}
+```
+
+### 3. ejecuta los siguientes comandos en la terminal
+
+```shell
+sudo ln -s /etc/nginx/sites-available/n8n /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+## Obtener certificado SSL con Let's Encrypt
+
+```shell
+sudo certbot --nginx -d your_dns_server.es
+```
